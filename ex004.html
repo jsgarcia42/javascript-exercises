@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Identificador de Brasileiros</h1>
+    Informe de qual país você é: <input type="text" name="nac" id="nac">
+    <input type="button" value="Verificar" onclick="identificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function identificar(){
+            const countryList = [
+                "afeganistão",
+                "albânia",
+                "argélia",
+                "samoa americana",
+                "andorra",
+                "angola",
+                "anguila",
+                "antártica",
+                "antígua e barbuda",
+                "argentina",
+                "armênia",
+                "aruba",
+                "austrália",
+                "áustria",
+                "azerbaijão",
+                "bahamas",
+                "bahrein",
+                "bangladesh",
+                "barrados",
+                "bielorrússia",
+                "bélgica",
+                "belize",
+                "benin",
+                "bermudas",
+                "butão",
+                "bolívia",
+                "bonaire",
+                "bósnia",
+                "botsuana",
+                "ilha bouvet",
+                "brasil",
+                "território britânico do oceano índico",
+                "brunei darussalam",
+                "bulgária",
+                "burkina faso",
+                "burundi",
+                "cabo verde",
+                "camboja",
+                "camarões",
+                "canadá",
+                "ilhas cayman",
+                "república centro-africana",
+                "chade",
+                "chile",
+                "china",
+                "ilha do natal",
+                "ilhas cocos",
+                "colômbia",
+                "comores",
+                "congo",
+                "ilhas cook",
+                "costa rica",
+                "croácia",
+                "cuba",
+                "curaçao",
+                "chipre",
+                "tcheca",
+                "costa do marfim",
+                "dinamarca",
+                "djibuti",
+                "dominica",
+                "república dominicana",
+                "equador",
+                "egito",
+                "el salvador",
+                "guiné equatorial",
+                "eritreia",
+                "estônia",
+                "eswatini",
+                "etiópia",
+                "ilhas malvinas",
+                "ilhas faroe",
+                "fiji",
+                "finlândia",
+                "frança",
+                "guiana francesa",
+                "polinésia francesa",
+                "territórios do sul da frança",
+                "gabão",
+                "gâmbia",
+                "geórgia",
+                "alemanha",
+                "gana",
+                "gibraltar",
+                "grécia",
+                "gronelândia",
+                "granada",
+                "guadalupe",
+                "guam",
+                "guatemala",
+                "guernsey",
+                "guiné",
+                "guiné-bissau",
+                "guiana",
+                "haiti",
+                "ilha heard e ilhas mcdonald",
+                "santa sé",
+                "honduras",
+                "hong kong",
+                "hungria",
+                "islândia",
+                "índia",
+                "indonésia",
+                "irã",
+                "iraque",
+                "irlanda",
+                "ilha de man",
+                "israel",
+                "itália",
+                "jamaica",
+                "japão",
+                "jersey",
+                "jordânia",
+                "cazaquistão",
+                "quênia",
+                "kiribati",
+                "coréia",
+                "coréia",
+                "kuwait",
+                "quirguistão",
+                "república democrática popular do laos",
+                "letônia",
+                "líbano",
+                "lesoto",
+                "libéria",
+                "líbia",
+                "liechtenstein",
+                "lituânia",
+                "luxemburgo",
+                "macau",
+                "madagáscar",
+                "malawi",
+                "malásia",
+                "maldivas",
+                "mali",
+                "malta",
+                "ilhas marshall",
+                "martinica",
+                "mauritânia",
+                "maurício",
+                "maiote",
+                "méxico",
+                "micronésia",
+                "moldávia",
+                "mônaco",
+                "mongólia",
+                "montenegro",
+                "montserrate",
+                "marrocos",
+                "moçambique",
+                "mianmar",
+                "namíbia",
+                "nauru",
+                "nepal",
+                "países baixos",
+                "nova caledônia",
+                "nova zelândia",
+                "nicarágua",
+                "níger",
+                "nigéria",
+                "niu",
+                "ilha norfolk",
+                "ilhas marianas do norte",
+                "noruega",
+                "omã",
+                "paquistão",
+                "palaú",
+                "palestina, estado de",
+                "panamá",
+                "papua nova guiné",
+                "paraguai",
+                "peru",
+                "filipinas",
+                "pitca"
+            ];
+            var txtn = window.document.querySelector('input#nac').value;
+            var res = window.document.querySelector('div#res');
+            var searchKeys  = countryList.map(e => e.toLowerCase());
+            var index = searchKeys.indexOf(txtn.toLowerCase());
+            if(index == -1) {
+                window.alert("Esta não é uma entrada válida para o campo de país. Tente novamente!");
+                window.location.reload();
+            } else {
+                res.innerHTML = `<p>O país de origem informado é <strong>${txtn}</strong></p>`;
+                console.log(txtn);
+                txtn = txtn.toLowerCase();
+                console.log(txtn);
+                if (txtn == "brasil" || txtn == "brazil") {
+                    res.innerHTML += '<p>Você é Brasileiro, sua entrada é permitida.</p>';
+                } else {
+                    res.innerHTML += '<p>Você é estrangeiro, apresente seu visto na imigração.</p>';
+                }
+                res.innerHTML += '<p>Seja bem-vindo ao Brasil! :)</p>';
+            }
+            
+        }
+    </script>
+</body>
+</html>
